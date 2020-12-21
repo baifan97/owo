@@ -19,6 +19,7 @@ typecho博客评论表情包升级
   "哔哩": { ...
   "微博": { ...
   "泡泡": { ...
+  "热门": { ...
 }
 ```
 ### ② Contents.php
@@ -47,7 +48,9 @@ static public function parseBiaoQing($content)
       array('Contents', 'parseWeiboBiaoqingCallback'), $content);
   $content = preg_replace_callback('/\:\!\(\s*(.*?)\s*\)/is',
       array('Contents', 'parseWinnieBiaoqingCallback'), $content);
-
+  $content = preg_replace_callback('/\:\!\(\s*(.*?)\s*\)/is',
+      array('Contents', 'parseWeisuoBiaoqingCallback'), $content);
+        return $content;
   return $content;
 }
 ```
@@ -92,4 +95,14 @@ private static function parseWinnieBiaoqingCallback($match)
 {
     return '<img class="biaoqing" src="/usr/themes/VOID/assets/libs/owo/biaoqing/winnie/'. str_replace('%', '', urlencode($match[1])) . '.png">';
 }
+
+ /**
+     * 热门表情表情回调函数
+     * 
+     * @return string
+     */
+    private static function parseWeisuoBiaoqingCallback($match)
+    {
+        return '<img class="biaoqing" src="/usr/themes/VOID/assets/libs/owo/biaoqing/weisuo/'. str_replace('%', '', urlencode($match[1])) . '.png">';
+    }
 ```
