@@ -48,7 +48,7 @@ static public function parseBiaoQing($content)
       array('Contents', 'parseWeiboBiaoqingCallback'), $content);
   $content = preg_replace_callback('/\:\!\(\s*(.*?)\s*\)/is',
       array('Contents', 'parseWinnieBiaoqingCallback'), $content);
-  $content = preg_replace_callback('/\:\!\(\s*(.*?)\s*\)/is',
+  $content = preg_replace_callback('/\:\%\(\s*(.*?)\s*\)/is',
       array('Contents', 'parseWeisuoBiaoqingCallback'), $content);
         return $content;
   return $content;
@@ -103,6 +103,6 @@ private static function parseWinnieBiaoqingCallback($match)
      */
     private static function parseWeisuoBiaoqingCallback($match)
     {
-        return '<img class="biaoqing" src="/usr/themes/VOID/assets/libs/owo/biaoqing/weisuo/'. str_replace('%', '', urlencode($match[1])) . '.png">';
+        return '<img class="biaoqing" src="/usr/themes/VOID/assets/libs/owo/biaoqing/weisuo/'. str_replace('%', '', urlencode($match[1])) . '.gif">';
     }
 ```
