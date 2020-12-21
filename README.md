@@ -4,13 +4,13 @@ typecho博客评论表情包升级
 
 ## 一、准备资源
 下载表情包上传到主题目录
-存放路径：博客根目录/usr/themes/VOID/assets/libs/owo/biaoqing
+存放路径：`博客根目录/usr/themes/VOID/assets/libs/owo/biaoqing`
 
 ## 二、修改文件
 ### ① OwO_02.json
-博客根目录/usr/themes/VOID/assets/libs/owo/biaoqing/OwO_02.json ，直接修改/替换
+`博客根目录/usr/themes/VOID/assets/libs/owo/biaoqing/OwO_02.json` ，直接修改/替换
 
- 修改后的 OwO_02.json 文件
+ 修改后的 `OwO_02.json` 文件，参考json规范
 ```
 {
   "维尼": { ...
@@ -23,9 +23,9 @@ typecho博客评论表情包升级
 }
 ```
 ### ② Contents.php
-博客根目录/usr/themes/VOID/libs/Contents.php 中找到解析表情方法 parseBiaoQing，在原有的 parseQuyinBiaoqingCallback 下添加四个函数，并分别新增四个函数的表情回调方法。
+`博客根目录/usr/themes/VOID/libs/Contents.php` 中找到解析表情方法 `parseBiaoQing`，在原有的 `parseQuyinBiaoqingCallback` 下添加四个函数，并分别新增四个函数的表情回调方法。
 
-修改 Contents.php 文件，大概在184行左右
+修改 `Contents.php` 文件，大概在184行左右
 ```
 /**
  * 解析表情
